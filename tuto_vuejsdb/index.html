@@ -1,0 +1,81 @@
+<!-- https://v2.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+
+    <!-- axios va servir à call l'API de la DB (vuejs ne peut pas y accéder directement)-->
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript" src="axios-1.x/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Initialisation de l'app vuejs-->
+
+    <div id="notreapp">
+        <!-- 1) Sélectionner tous les utilisateurs à la fois-->
+        <input type="button" value="Afficher tous les utilisateurs" @click="tousLesUtilisateurs()">
+        <!-- @click = déclenche une action quand on clique sur le bouton, 
+                                                                                                                ici on appellera notre fonction pour récupérer et afficher tous les users  -->
+
+        <!-- 2) Sélectionner les utilisateurs en fonction de leur ID (id de la table utilisateurs)-->
+
+        <input type="text" placeholder="Entrez l'ID de l'utilisateur" v-model="idUtilisateur">
+        <!-- v-model = permet de lier un champ de formulaire à une variable vuejs -->
+        <input type="button" value="Afficher l'utilisateur" @click="unUtilisateur()">
+        <!-- @click = déclenche une action quand on clique sur le bouton, 
+                                                                                                                ici on appellera notre fonction pour récupérer et afficher un user en fct de son ID -->
+
+        <!-- 3) Affichage pour recevoir les résultats (le plus simple, un tableau) -->
+
+        <table border="1" width="70%" style="border-collapse: collapse;">
+
+            <!-- Les colonnes de nos tables décrivant l'utilisateur-->
+            <tr>
+                <th>ID</th>
+                <th>Nom d'utilisateur</th>
+                <th>Nom</th>
+                <th>Email</th>
+            </tr>
+
+            <!-- Boucle sur les utilisateurs pour ajouter les lignes correspondantes -->
+            <!-- Les {{ }} sont utilisées en vuejs pour afficher les données au DOM (une structure d'objets) -->
+            <tr v-for="utilisateur in utilisateurs">
+                <td>{{ utilisateur.id }}</td>
+                <td>{{ utilisateur.username }}</td>
+                <td>{{ utilisateur.name }}</td>
+                <td>{{ utilisateur.email }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- APP VUEJS -->
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#notreapp',
+            data: {
+                utilisateurs: "", // on initialise la variable utilisateurs à vide
+                idUtilisateur: 0 // on initialise la variable idUtilisateur à 0
+            },
+
+            // Ici on va définir les deux fonctions que l'on a appelées dans le HTML sur les boutons (tousLesUtilisateurs et unUtilisateur)
+            methods: {
+                tousLesUtilisateurs: function() {
+
+                },
+
+                unUtilisateur: function() {
+
+                }
+            }
+        });
+    </script>
+
+    </div>
+</body>
+
+</html>
