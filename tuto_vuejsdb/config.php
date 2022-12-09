@@ -1,7 +1,7 @@
 <?php
 
 $host = "http://100.74.7.84/phpMyAdmin/"; // là où se trouve l'app phpmyadmin
-$username = "projetsae";
+$username = "rojetsae";
 $password = "saebut2projet!";
 $dbname = "test-vuejsDB";
 
