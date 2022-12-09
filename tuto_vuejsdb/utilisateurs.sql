@@ -40,9 +40,9 @@ CREATE TABLE `utilisateurs` (
 
 INSERT INTO `utilisateurs` (`id`, `username`, `nom`, `email`) VALUES
 (1, 'lucas1', 'arnu', 'lucas.arnu@gmail.com'),
-(2, 'matteo2', 'vella', 'matteo.vella@gmail.com'),
-(3, 'brice3', 'dellaera', 'brice.dellaera@gmail.com'),
-(4, 'louis4', 'enel', 'louis.enel@gmail.com');
+(2, 'jean2', 'doe', 'jean2.doe@gmail.com'),
+(3, 'jeanne3 ', 'doelle', 'jeanne3.doelle@gmail.com'),
+(4, 'jeanette4', 'doellette', 'jeanette4.doellette@gmail.com');
 
 --
 -- Index pour les tables déchargées
