@@ -59,17 +59,39 @@
             el: '#notreapp',
             data: {
                 utilisateurs: "", // on initialise la variable utilisateurs à vide
-                idUtilisateur: 0 // on initialise la variable idUtilisateur à 0
+                idUtilisateur: "" // on initialise la variable idUtilisateur à 0
             },
 
             // Ici on va définir les deux fonctions que l'on a appelées dans le HTML sur les boutons (tousLesUtilisateurs et unUtilisateur)
             methods: {
                 tousLesUtilisateurs: function() {
+                axios.get('ajaxrequetes.php').then(function(response) {
+                    // On récupère les données de la DB et on les stocke dans la variable utilisateurs
+                    app.utilisateurs = response.data;
+                })
+                // On récupère les erreurs éventuelles et on les affiche dans la console
+                .catch(function(error) {
+                    console.log(error);
+                });
+
 
                 },
 
-                unUtilisateur: function() {
 
+                unUtilisateur: function() {
+                    // Si l'id de l'utilisateur est supérieur à 0, on envoie la requête
+                    if (this.idUtilisateur > 0) {
+                        axios.get('ajaxrequetes.php' , {
+                            params: {
+                                idUtilisateur : this.idUtilisateur
+                            }
+                        }).then(function(response) {
+                            // On récupère les données de la DB et on les stocke dans la variable utilisateurs
+                            app.utilisateurs = response.data;
+                        }).catch(function(error) {
+                            console.log(error);
+                        });
+                    }
                 }
             }
         });

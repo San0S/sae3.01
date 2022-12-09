@@ -7,11 +7,11 @@ include 'config.php';
 $condition = '1';
 // On vérifie si l'ID est envoyé, si c'est le cas, on associe la valeur de condition à l'ID, suivi par la valeur de l'ID (id = 1, id = 2, etc. qui correspond à l'ID de l'utilisateur)
 if (isset($_GET['id'])) {
-    $condition = 'id = ' . $_GET['id'];
+    $condition = 'id = ' . $_GET['idUtilisateur'];
 }
 
 
-$donneesUser = mysqli_query($db, 'SELECT * FROM users WHERE ' . $condition);
+$donneesUser = mysqli_query($db, 'SELECT * FROM utilisateurs WHERE ' . $condition);
 $reqQuery = array(); // On crée un tableau vide pour stocker les données
 
 // On parcourt les données récupérées et on initialise le tableau avec les données récupérées
