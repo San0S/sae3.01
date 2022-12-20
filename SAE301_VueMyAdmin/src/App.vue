@@ -1,17 +1,24 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <div>
-    <ShowDBTables />
+    <ShowStructTables />
   </div>
 </template>
 
 <script>
-import ShowDBTables from './components/ShowDBTables.vue';
+// import ShowDatabase from './components/ShowDatabase.vue';
+import ShowStructTables from './components/ShowStructTables.vue';
+
+// export default {
+//   name: 'App',
+//   components: {
+//     ShowDatabase
+//   }
+// }
 
 export default {
-  name: 'App',
   components: {
-    ShowDBTables
+    ShowStructTables
   }
 }
 </script>
