@@ -19,7 +19,7 @@
         <!-- 1) Sélectionner tous les utilisateurs à la fois-->
         <input type="button" value="Afficher tous les utilisateurs" @click="tousLesUtilisateurs()">
         <!-- @click = déclenche une action quand on clique sur le bouton, 
-                                                                                                                ici on appellera notre fonction pour récupérer et afficher tous les users  -->
+            ici on appellera notre fonction pour récupérer et afficher tous les users  -->
 
         <!-- 2) Sélectionner les utilisateurs en fonction de leur ID (id de la table utilisateurs)-->
 
@@ -27,7 +27,7 @@
         <!-- v-model = permet de lier un champ de formulaire à une variable vuejs -->
         <input type="button" value="Afficher l'utilisateur" @click="unUtilisateur()">
         <!-- @click = déclenche une action quand on clique sur le bouton, 
-                                                                                                                ici on appellera notre fonction pour récupérer et afficher un user en fct de son ID -->
+            ici on appellera notre fonction pour récupérer et afficher un user en fct de son ID -->
 
         <!-- 3) Affichage pour recevoir les résultats (le plus simple, un tableau) -->
 
@@ -46,11 +46,14 @@
             <tr v-for="utilisateur in utilisateurs">
                 <td>{{ utilisateur.id }}</td>
                 <td>{{ utilisateur.username }}</td>
-                <td>{{ utilisateur.name }}</td>
+                <td>{{ utilisateur.nom }}</td>
                 <td>{{ utilisateur.email }}</td>
             </tr>
         </table>
     </div>
+
+
+
 
     <!-- APP VUEJS -->
 
@@ -65,7 +68,7 @@
             // Ici on va définir les deux fonctions que l'on a appelées dans le HTML sur les boutons (tousLesUtilisateurs et unUtilisateur)
             methods: {
                 tousLesUtilisateurs: function() {
-                axios.get('ajaxrequetes.php').then(function(response) {
+                axios.get('./ajaxrequetes.php').then(function(response) {
                     // On récupère les données de la DB et on les stocke dans la variable utilisateurs
                     app.utilisateurs = response.data;
                 })
@@ -81,7 +84,7 @@
                 unUtilisateur: function() {
                     // Si l'id de l'utilisateur est supérieur à 0, on envoie la requête
                     if (this.idUtilisateur > 0) {
-                        axios.get('ajaxrequetes.php' , {
+                        axios.get('./ajaxrequetes.php' , {
                             params: {
                                 idUtilisateur : this.idUtilisateur
                             }
