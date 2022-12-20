@@ -17,7 +17,7 @@
       }
     },
     mounted() {
-      axios.get('http://localhost/db.php')
+      axios.get('http://100.74.7.84/db.php')
         .then(response => {
           this.databases = response.data;
         })
