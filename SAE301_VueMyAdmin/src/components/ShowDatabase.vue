@@ -1,29 +1,20 @@
 <template>
   <div>
-    <h1>Bases de données présentes sur le server localhost</h1>
-    <ul>
-      <li v-for="database in databases" :key="database">{{ database }}</li>
-    </ul>
+    <ShowTables :database="selectedDatabase"/>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import ShowTables from './ShowTables.vue'
 
 export default {
+  components: {
+    ShowTables
+  },
   data() {
     return {
-      databases: []
+      selectedDatabase: 'sae301_evaluation'
     }
-  },
-  mounted() {
-    axios.get('http://localhost/db.php')
-      .then(response => {
-        this.databases = response.data;
-      })
-      .catch(error => {
-        console.error(error);
-      });
   }
 }
 </script>

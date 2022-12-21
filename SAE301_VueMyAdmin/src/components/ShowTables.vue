@@ -6,26 +6,52 @@
   </div>
 </template>
 
+
 <script>
+// version 1 : en précisant en dur la db dans db.php (pas d'utilisation de parent container)
+// import axios from 'axios';
+// export default {
+//   data() {
+//     return {
+//       tables: []
+//     }
+//   },
+//   created() {
+//     this.fetchTables()
+//   },
+//   methods: {
+//     async fetchTables() {
+//       try {
+//         const response = await axios.get('http://localhost/db.php')
+//         this.tables = response.data.tables
+//       } catch (error) {
+//         console.error(error)
+//       }
+//     }
+//   }
+// }
+
+// version 2 : en utilisant le parent container (donc on récupère la db grâce à props et $_GET['database'] dans db.php)
+
 import axios from 'axios';
 export default {
+  props: {
+    database: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
       tables: []
     }
   },
   created() {
-    this.fetchTables()
-  },
-  methods: {
-    async fetchTables() {
-      try {
-        const response = await axios.get('http://localhost/db.php')
-        this.tables = response.data.tables
-      } catch (error) {
-        console.error(error)
-      }
-    }
+    axios.get(`http://localhost/db.php`, { params: { database: this.database } })
+      .then(response => {
+        this.tables = response.data.tables;
+      })
   }
 }
+
 </script>
