@@ -9,23 +9,21 @@
 <script>
 import axios from 'axios';
 export default {
+  props: {
+    database: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
       tables: []
     }
   },
   created() {
-    this.fetchTables()
-  },
-  methods: {
-    async fetchTables() {
-      try {
-        const response = await axios.get('http://localhost/db.php')
-        this.tables = response.data.tables
-      } catch (error) {
-        console.error(error)
-      }
-    }
+    axios.get(`http://100.74.7.84/db.php`, { params: { database: this.database } })
+      .then(response => {
+        this.tables = response.data.tables;
+      })
   }
-}
-</script>
+}</script>
