@@ -1,15 +1,26 @@
 <template>
+  <div>
+    <ShowTables :database="selectedDatabase" :table="selectedTable"/>
+  </div>
+</template>
 
-  </template>
-  
-  <script>
-    import axios from "axios";
+<script>
+import ShowTables from './ShowTables.vue'
 
-
-  </script>
-  
-  <style>
-
-  </style>
-  
-  
+export default {
+  components: {
+    ShowTables
+  },
+  props: {
+    selectedTable: {
+      type: String,
+      required: true
+    }
+  },
+  data() {
+    return {
+      selectedDatabase: 'sae301_evaluation'
+    }
+  }
+}
+</script>

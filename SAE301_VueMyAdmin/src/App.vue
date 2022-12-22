@@ -1,16 +1,20 @@
 <template>
   <div>
-    <ShowDatabase />
+    <ShowStructTables :selectedTable="selectedTable"/>
   </div>
 </template>
 
 <script>
-import ShowDatabase from './components/ShowDatabase.vue'
+import ShowStructTables from './components/ShowStructTables.vue'
 
 export default {
   components: {
-    ShowDatabase
+    ShowStructTables
+  },
+  data() {
+    return {
+      selectedTable: 'libellePartiel'
+    }
   }
 }
 </script>
-

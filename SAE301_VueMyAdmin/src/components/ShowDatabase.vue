@@ -1,19 +1,19 @@
 <template>
   <div>
-    <ShowTables :database="selectedDatabase"/>
+    <!-- <ShowTables :database="selectedDatabase"/> -->
+    <ShowStructTables :selectedTable="selectedTable"/>
   </div>
 </template>
 
 <script>
-import ShowTables from './ShowTables.vue'
+import ShowStructTables from './ShowStructTables.vue'
 
 export default {
   components: {
-    ShowTables
+    ShowStructTables
   },
   data() {
     return {
-      selectedDatabase: 'sae301_evaluation'
     }
   }
 }
