@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-      selectedTable: 'libellePartiel'
+      selectedTable: 'partiel2a'
     }
   }
 }
