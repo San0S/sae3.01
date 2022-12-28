@@ -8,10 +8,8 @@
     </ul>
     <h3>Table(s)</h3>
     <ul>
-      <li v-for="table in tables" :key="table.Name">
-        {{ table.Name }}
-        <!-- {{ console.log(table.Name)}} -->
-      </li>
+     <!-- <li v-for="table in tables" :key="table.Name">{{ table.Name }}</li> --> 
+     <li v-for="(table,key) in tables" :key="key">{{ table[0] }}</li>
     </ul>
   </div>
 </template>
