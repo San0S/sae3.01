@@ -29,9 +29,6 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-
----
-
 ### Se connecter au server Debian
 - Téléchargez cisco anyconnect si c'est pas déjà fait 
 - Url du serveur à saisir quand vous le lancez : `vpn.lothaire.net`
