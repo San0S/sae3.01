@@ -23,12 +23,13 @@ export default {
     return {
       databases: [],
       tables: [],
-      // tableColumns: [],
-      // tableRows: [],
+      tableColumns: [],
+      tableRows: [],
     };
   },
   methods: {
     showTables(databaseName) {
+      this.selectedDatabase = databaseName;
       axios.get(`http://localhost/db.php?database=${databaseName}`)
         .then(response => {
           this.tables = response.data;
@@ -41,7 +42,7 @@ export default {
       this.selectedDatabase = databaseName;
       axios.get(`http://localhost/db.php?database=${this.selectedDatabase}&table=${tableName}`)
         .then(response => {
-          // this.tableColumns = Object.keys(response.data[0]);
+          this.tableColumns = Object.keys(response.data[0]);
           this.tableRows = response.data;
           this.displayTableData = true;
         })
