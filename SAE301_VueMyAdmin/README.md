@@ -21,7 +21,7 @@ npm run lint
 ```
 
 
-### Mettez le fichier db.php dans le dossier `C:\wamp64\www`, importez le fichier sql sur phpmyadmin (tjrs en local, pas le server) et n'oubliez pas de changer les identifiants dans le fichier php si vous en avez de différents
+### Mettez le fichier db.php dans le dossier `C:\wamp64\www` (ou `/var/www/html`), importez le fichier sql sur phpmyadmin (tjrs en local, pas le server) et n'oubliez pas de changer les identifiants dans le fichier php si vous en avez de différents
 
 ### Se connecter au server Debian
 
