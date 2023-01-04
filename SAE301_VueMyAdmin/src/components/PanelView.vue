@@ -18,47 +18,7 @@
     </div>
   </div>
 </template>
-  
-<style>
-.main-panel {
-  margin: 0 auto;
-  width: 200px;
-}
 
-.side-panel {
-  width: 200px;
-  background-color: #f5f5f5;
-  border-right: 1px solid #ddd;
-  height: 60%;
-  overflow-y: auto;
-}
-
-h3 {
-  padding: 0px;
-  margin: 0;
-  font-size: 14px;
-  font-weight: bold;
-  background-color: #eee;
-  border-bottom: 1px solid #ddd;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  margin: 10px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-li:hover {
-  background-color: #eee;
-}
-</style>
-  
 <script>
 import axios from 'axios';
 import TableData from './TableData.vue';
