@@ -10,7 +10,7 @@
     <ul> 
       <li v-for="(table,key) in tables" :key="key" v-on:click="showTableData(table[0])">{{ table[0] }}</li>
     </ul>
-    <TableData v-if="displayTableData" :columns="tableColumns" :rows="tableRows" />
+    <TableData :columns="tableColumns" :rows="tableRows" />
   </div>
 </template>
 
