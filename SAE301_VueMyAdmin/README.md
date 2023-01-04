@@ -1,36 +1,29 @@
-# sae301_vuemyadmin
+# tuto
 
-## Project setup
-### 1- Copy and paste dp.php in C://wamp64/www/ (or /var/www/html/ for the debian server), modify it if necessary
+This template should help get you started developing with Vue 3 in Vite.
 
-### 2- Import databases.sql in PhpMyAdmin
+## Recommended IDE Setup
 
-### 3- Install packages
-```
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
 npm install
 ```
 
+### Compile and Hot-Reload for Development
 
-### 4- Compiles and hot-reloads for development
-```
-npm run serve
+```sh
+npm run dev
 ```
 
-### 5- Compiles and minifies for production
-```
+### Compile and Minify for Production
+
+```sh
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-### Se connecter au server Debian
-- Téléchargez cisco anyconnect si c'est pas déjà fait 
-- Url du serveur à saisir quand vous le lancez : `vpn.lothaire.net`
-- Nom d'utilisateur à mettre : `votreloginENT@etu`
-- Mot de passe : celui que vous utilisez pour vous connecter à l'ENT (pas au LNA)
