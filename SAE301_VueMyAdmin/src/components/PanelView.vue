@@ -39,7 +39,6 @@ export default {
         });
     },
     showTableData(tableName) {
-      this.selectedDatabase = databaseName;
       axios.get(`http://localhost/db.php?database=${this.selectedDatabase}&table=${tableName}`)
         .then(response => {
           this.tableColumns = Object.keys(response.data[0]);
