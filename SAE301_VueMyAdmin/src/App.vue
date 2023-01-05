@@ -5,7 +5,7 @@
       <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
 
         <img v-if="collapsed" src="./assets/Vue_js_logo.png" class="vue_logo" alt="">
-        <img v-else src="./assets/log_menu.png" class="vue_logo" alt="">
+        <img v-else src="./assets/log_menu.PNG" class="vue_logo" alt="">
 
         <a-menu-item key="1" style="margin-top: 50px">
           <DatabaseOutlined />
@@ -65,7 +65,7 @@
   </a-layout>
 </template>
 <script>
-import { DatabaseOutlined, TableOutlined, MenuFoldOutlined, MenuUnfoldOutlined, FileOutlined } from '@ant-design/icons-vue';
+import { DatabaseOutlined, TableOutlined, MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons-vue';
 import { defineComponent, ref } from 'vue';
 export default defineComponent({
   components: {
