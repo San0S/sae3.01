@@ -6,7 +6,7 @@
       <img v-if="collapsed" src="../assets/Vue_js_logo.png" class="vue_logo" alt="">
       <img v-else src="../assets/log_menu.PNG" class="vue_logo" alt="">
 
-        
+      <!-- <div class="databases"> -->
       <a-sub-menu v-for="database in databases" :key="database.Database" v-on:click="showTables(database.Database)">
         <template #title>
           <span>
@@ -18,37 +18,8 @@
             <TableOutlined />
             <span>{{ table[0] }}</span>
         </a-menu-item>
-      </a-sub-menu>  
-     
-<!--       
-      <a-menu-item key="2">
-        <DatabaseOutlined />
-        <span>Option 2</span>
-      </a-menu-item>
-      
-      <a-sub-menu key="sub1">
-        <template #title>
-          <span>
-            <DatabaseOutlined />
-            <span>User</span>
-          </span>
-        </template>
-        <a-menu-item key="3"> <TableOutlined /> Tom</a-menu-item>
-        <a-menu-item key="4">Bill</a-menu-item>
-        <a-menu-item key="5">Alex</a-menu-item>
       </a-sub-menu>
-
-      <a-sub-menu key="sub2">
-        <template #title>
-          <span>
-            <DatabaseOutlined />
-            <span>Team</span>
-          </span>
-        </template>
-        <a-menu-item key="6">Team 1</a-menu-item>
-        <a-menu-item key="8">Team 2</a-menu-item>
-      </a-sub-menu> -->
-      
+      <!-- </div> -->
 
       <menu-unfold-outlined v-if="collapsed" class="trigger" @click="() => (collapsed = !collapsed)" />
       <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
@@ -168,6 +139,11 @@ export default defineComponent({
   margin: 25px auto 50px 15px;
   height: 40px;
 
+}
+
+.databases {
+  overflow: auto;
+  height: 80vh;
 }
 
 </style>
