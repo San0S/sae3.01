@@ -35,7 +35,7 @@ export default {
   methods: {
     showTables(databaseName) {
       this.selectedDatabase = databaseName;
-      axios.get(`http://100.74.7.84/db.php?database=${databaseName}`)
+      axios.get(`http://localhost/db.php?database=${databaseName}`)
         .then(response => {
           this.tables = response.data;
         })
@@ -44,7 +44,7 @@ export default {
         });
     },
     showTableData(tableName) {
-      axios.get(`http://100.74.7.84/db.php?database=${this.selectedDatabase}&table=${tableName}`)
+      axios.get(`http://localhost/db.php?database=${this.selectedDatabase}&table=${tableName}`)
         .then(response => {
           console.log('API response:', response);
           console.log('Table data:', response.data);
@@ -65,7 +65,7 @@ export default {
     // MainDisplay, 
   },
   created() {
-    axios.get('http://100.74.7.84/db.php')
+    axios.get('http://localhost/db.php')
       .then(response => {
         this.databases = response.data;
       })
