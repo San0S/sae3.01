@@ -14,7 +14,7 @@
             <span>{{ database.Database }}</span>
           </span>
         </template>
-        <a-menu-item v-for="(table, key) in tables" :key="key">
+        <a-menu-item v-for="(table, key) in tables[database.Database]" :key="key">
             <TableOutlined />
             <span>{{ table[0] }}</span>
         </a-menu-item>
@@ -69,7 +69,7 @@ export default defineComponent({
       this.selectedDatabase = databaseName;
       axios.get(`http://localhost/db.php?database=${databaseName}`)
         .then(response => {
-          this.tables = response.data;
+          this.tables[databaseName]= response.data;
         })
         .catch(error => {
           console.error(error);
