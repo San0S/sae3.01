@@ -1,31 +1,5 @@
 <template>
-  <a-layout-sider v-model:collapsed="collapsed" :trigger="null" :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0, top: 0, bottom: 0 }" collapsible>
-    <div class="logo" />
-    <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
 
-      <img v-if="collapsed" src="../assets/Vue_js_logo.png" class="vue_logo" alt="">
-      <img v-else src="../assets/log_menu.PNG" class="vue_logo" alt="">
-
-      <!-- <div class="databases"> -->
-      <a-sub-menu v-for="database in databases" :key="database.Database" v-on:click="showTables(database.Database)">
-        <template #title>
-          <span>
-            <DatabaseOutlined />
-            <span>{{ database.Database }}</span>
-          </span>
-        </template>
-        <a-menu-item v-for="(table, key) in tables[database.Database]" :key="key">
-            <TableOutlined />
-            <span>{{ table[0] }}</span>
-        </a-menu-item>
-      </a-sub-menu>
-      <!-- </div> -->
-
-      <menu-unfold-outlined v-if="collapsed" class="trigger" @click="() => (collapsed = !collapsed)" />
-      <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
-
-    </a-menu>
-  </a-layout-sider>
 </template>
 
 <script>
