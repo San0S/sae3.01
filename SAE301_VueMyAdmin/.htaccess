@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Veuillez vous connecter pour continuer"
+AuthUserFile C:\wamp64\www\.htpasswd
+Require valid-user
